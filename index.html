@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random circles</title>
+</head>
+<body>
+    <input type="color" onchange="setColor(this.value)">
+    <button onclick="change()">Click</button>
+    <canvas width="1340px" height="600px"></canvas>
+    
+</body>
+<script>
+    var canvas = document.getElementsByTagName("canvas")[0];
+    var ctx = canvas.getContext("2d");
+    var x=1350*Math.random;
+    var y= 635*Math.random;
+    ctx.strokeStyle="#000";
+    for (var index=0; index<1000; index++)
+    {
+        ctx.beginPath();
+        var x=1350*Math.random();
+        var y= 635*Math.random();
+        ctx.arc(x,y,10,0,Math.PI*2,false);
+        ctx.stroke();
+    }
+    function setColor(val)
+    {
+        ctx.strokeStyle=val;
+    }
+    function change()
+    {
+        ctx.clearRect(0,0,1350,635);
+        for (var index=0; index<1000; index++)
+    {
+        ctx.beginPath();
+        var x=1350*Math.random();
+        var y= 635*Math.random();
+        ctx.arc(x,y,10,0,Math.PI*2,false);
+        ctx.stroke();
+    }
+
+    }
+</script>
+</html>
